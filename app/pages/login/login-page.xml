@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Page navigatingTo="onNavigatingTo" class="page" xmlns="http://schemas.nativescript.org/tns.xsd">
+  <ActionBar title="SMS Filter - Login" class="action-bar" />
+  <StackLayout class="p-20">
+    <Label text="Email:" class="h3 m-b-5" />
+    <TextField id="email" hint="Enter email" keyboardType="email" class="input m-b-20" />
+    
+    <Label text="Password:" class="h3 m-b-5" />
+    <TextField id="password" hint="Enter password" secure="true" class="input m-b-20" />
+    
+    <Button text="Login" tap="{{ onLogin }}" class="btn btn-primary m-b-10" />
+    <Button text="Register" tap="{{ onRegister }}" class="btn btn-outline" />
+  </StackLayout>
+</Page>

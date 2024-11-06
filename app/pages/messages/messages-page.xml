@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Page navigatingTo="onNavigatingTo" xmlns="http://schemas.nativescript.org/tns.xsd">
+  <ActionBar title="SMS Messages" class="action-bar">
+    <ActionItem tap="{{ onRefresh }}" ios.position="right" android.position="actionBar">
+      <Label text="🔄" class="action-item" />
+    </ActionItem>
+    <ActionItem tap="{{ onLogout }}" ios.position="right" android.position="actionBar">
+      <Label text="📤" class="action-item" />
+    </ActionItem>
+  </ActionBar>
+
+  <GridLayout rows="auto, *">
+    <GridLayout row="0" columns="*, *" class="p-10">
+      <SearchBar col="0" hint="Search messages..." text="{{ searchQuery }}" />
+      <Button col="1" text="Filter" tap="{{ onFilter }}" class="btn btn-primary" />
+    </GridLayout>
+
+    <ListView row="1" items="{{ messages }}" itemTap="{{ onItemTap }}" class="list-group">
+      <ListView.itemTemplate>
+        <GridLayout columns="*, auto" class="list-group-item">
+          <StackLayout col="0">
+            <Label text="{{ address }}" class="h3" />
+            <Label text="{{ body }}" textWrap="true" class="p" />
+            <Label text="{{ date | dateConverter }}" class="footnote" />
+          </StackLayout>
+        </GridLayout>
+      </ListView.itemTemplate>
+    </ListView>
+  </GridLayout>
+</Page>
